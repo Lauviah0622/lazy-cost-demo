@@ -1,6 +1,6 @@
 {
-  "name": "lazy-cost",
-  "version": "1.0.0-beta.48",
+  "name": "lazy-cost-demo",
+  "version": "0.0.1",
   "description": "AstroWind: A free template using Astro 4.0 and Tailwind CSS. Astro starter theme.",
   "type": "module",
   "engines": {
