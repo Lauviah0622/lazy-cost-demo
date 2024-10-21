@@ -12,3 +12,6 @@ collections:
       - { label: "Body", name: "body", widget: "markdown" }
 media_folder: "src/assets/images" # Location where files will be stored in the repo
 public_folder: "src/assets/images"
+backend:
+  name: git-gateway
+  branch: main
