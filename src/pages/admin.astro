@@ -20,17 +20,24 @@
 
       // CMS.re
     </script>
-    
+
     <script>
-        if (window.netlifyIdentity) {
-          window.netlifyIdentity.on("init", (user) => {
-            if (!user) {
-              window.netlifyIdentity.on("login", () => {
-                document.location.href = "/admin/";
-              });
-            }
+      import netlifyIdentity from 'netlify-identity-widget';
+
+      netlifyIdentity.init({
+        // container: '#netlify-modal', // defaults to document.body
+        locale: 'en', // defaults to 'en'
+      });
+
+      netlifyIdentity.on('init', (user) => {
+        console.log('inited');
+
+        if (!user) {
+          netlifyIdentity.on('login', () => {
+            document.location.href = '/admin/';
           });
         }
+      });
     </script>
   </body>
 </html>
