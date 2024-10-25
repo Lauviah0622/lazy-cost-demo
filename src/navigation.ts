@@ -23,10 +23,10 @@ export const headerData = {
     //     },
     //   ],
     // },
-    {
-      text: '介紹',
-      href: getPermalink('/intro'),
-    },
+    // {
+    //   text: '介紹',
+    //   href: getPermalink('/intro'),
+    // },
     {
       text: '關於我',
       href: getPermalink('/about'),
