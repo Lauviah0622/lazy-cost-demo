@@ -13,17 +13,6 @@ const { metadata } = Astro.props;
 ---
 
 <PageLayout metadata={metadata}>
-  <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", (user) => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
-          });
-        }
-      });
-    }
-</script>
   <Fragment slot="announcement">
     <slot name="announcement" />
   </Fragment>

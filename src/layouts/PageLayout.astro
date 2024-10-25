@@ -16,6 +16,7 @@ const { metadata } = Astro.props;
 ---
 
 <Layout metadata={metadata}>
+  <slot name="scripts"/>
   <slot name="announcement">
     <Announcement />
   </slot>

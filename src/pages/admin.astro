@@ -13,6 +13,7 @@
     <!-- <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script> -->
   </head>
   <body>
+    <script src="../utils/netlify.ts"></script>
     <script>
       import CMS from 'decap-cms-app';
 
@@ -20,24 +21,6 @@
 
       // CMS.re
     </script>
-
-    <script>
-      import netlifyIdentity from 'netlify-identity-widget';
-
-      netlifyIdentity.init({
-        // container: '#netlify-modal', // defaults to document.body
-        locale: 'en', // defaults to 'en'
-      });
-
-      netlifyIdentity.on('init', (user) => {
-        console.log('inited');
-
-        if (!user) {
-          netlifyIdentity.on('login', () => {
-            document.location.href = '/admin/';
-          });
-        }
-      });
-    </script>
+    
   </body>
 </html>
