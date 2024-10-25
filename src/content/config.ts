@@ -63,6 +63,38 @@ const postCollection = defineCollection({
   }),
 });
 
+const aboutSchema = {
+  title: z.string(),
+  intro: z.string(),
+  stat: z.array(
+    z.object({
+      title: z.string(),
+      amount: z.number(),
+    })
+  ),
+  achievements: z.object({
+    title: z.string(),
+    desc: z.string(),
+    items: z.array(
+      z.object({
+        title: z.string(),
+        desc: z.string(),
+        icon: z.string(),
+      })
+    ),
+  }),
+  contact: z.array(
+    z.object({
+      title: z.string(),
+      desc: z.string(),
+    })
+  ),
+};
+
 export const collections = {
   post: postCollection,
+  about: {
+    type: 'data',
+    schema: z.object(aboutSchema),
+  },
 };

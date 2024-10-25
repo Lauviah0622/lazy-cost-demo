@@ -1,16 +1,79 @@
 collections:
-  - name: "blog" # Used in routes, e.g., /admin/collections/blog
-    label: "Blog" # Used in the UI
-    folder: "src/content/blog" # The path to the folder where the documents are stored
+  - name: "post" # Used in routes, e.g., /admin/collections/blog
+    label: "文章" # Used in the UI
+    folder: "src/content/post" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     fields: # The fields for each document, usually in frontmatter
       - { label: "Layout", name: "layout", widget: "hidden", default: "blog" }
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Featured Image", name: "thumbnail", widget: "image" }
-      - { label: "Rating (scale of 1-5)", name: "rating", widget: "number" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "標題", name: "title", widget: "string" }
+      - { label: "簡述", name: "excerpt", widget: "text" }
+      - { label: "作者", name: "author", widget: "string" }
+      - { label: "發布日期", name: "publishDate", widget: "datetime" }
+      - { label: "附圖", name: "image", widget: "image", required: false }
+      - label: "標籤"
+        name: "tags"
+        widget: "list"
+        field: { label: "名稱", name: "tag", widget: "string" }
+        allow_add: true
+        summary: "輸入文章的標籤"
+        add_to_top: true
+      - { label: "內容", name: "body", widget: "markdown" }
+  - name: "page"
+    label: "頁面"
+    files: 
+      - label: "關於我"
+        name: 'about'
+        file: "src/content/about/data.yml"
+        fields:
+         - { label: "標題", name: "title", widget: "string" }
+         - { label: "介紹", name: "intro", widget: "text" }
+         - label: "統計"
+           name: "stat"
+           widget: "list"
+           fields: 
+            - { label: '標題', name: 'title', widget: string}
+            - { label: '數量', name: 'amount', widget: number}
+         - label: "成就"
+           name: "achievements"
+           widget: "object"
+           fields: 
+            - { label: '標題', name: 'title', widget: string}
+            - { label: '描述', name: 'desc', widget: text}
+            - label: "項目"
+              name: "items"
+              widget: "list"
+              fields: 
+                - { label: '項目', name: 'title', widget: string}
+                - { label: '描述', name: 'desc', widget: text}
+                - label: '圖示'
+                  name: 'icon'
+                  widget: select
+                  options: 
+                    - { label: "play-card-7", value: "play-card-7"}
+                    - { label: "align-box-right-top", value: "align-box-right-top"}
+                    - { label: "calculator", value: "calculator"}
+                    - { label: "hanger-2", value: "hanger-2"}
+                    - { label: "clock-hour-3", value: "clock-hour-3"}
+                    - { label: "device-cctv", value: "device-cctv"}
+                    - { label: "circle-letter-w", value: "circle-letter-w"}
+                    - { label: "blob", value: "blob"}
+                    - { label: "clock-hour-5", value: "clock-hour-5"}
+                    - { label: "bed-flat", value: "bed-flat"}
+                    - { label: "crop-16-9", value: "crop-16-9"}
+         - label: "地址"
+           name: "loc"
+           widget: "object"
+           fields: 
+            - { label: '項目', name: 'title', widget: string}
+            - { label: '描述', name: 'desc', widget: text}
+         - label: "聯絡我們"
+           name: "contact"
+           widget: "list"
+           fields: 
+            - { label: '項目', name: 'title', widget: string}
+            - { label: '描述', name: 'desc', widget: text}
 media_folder: "src/assets/images" # Location where files will be stored in the repo
+locale: "zh_Hant"
 public_folder: "src/assets/images"
 local_backend: true
 backend:

@@ -1,0 +1,38 @@
+title: 關於我
+intro: 我是一位在台灣工作的軟體工程師，對後端開發及系統架構有著濃厚的興趣。喜歡學習新技術，並熱衷於解決複雜的問題。
+stat:
+  - title: 完成的專案
+    amount: 15
+  - title: 客戶數量
+    amount: 20
+  - title: 項目數量
+    amount: 5
+  - title: 工作經驗
+    amount: 20
+achievements:
+  title: 相關專業
+  desc: 多年的經驗帶給你優秀的服務
+  items:
+    - desc: 管理和協調多個跨部門的專案，確保按時交付並達成質量標準。
+      title: 專案管理
+      icon: play-card-7
+    - title: 後端開發
+      desc: 擁有多年的後端開發經驗，熟悉 Python 和 Node.js 等技術。
+      icon: hanger-2
+    - title: 數據分析
+      desc: 具備使用 SQL 和 Python 進行數據分析的技能，幫助公司進行數據驅動的決策。
+      icon: blob
+    - title: 系統設計
+      desc: 擅長設計高效能的系統架構，以支援大型應用程式和高流量需求。
+      icon: bed-flat
+    - title: 團隊合作
+      desc: 積極參與團隊合作，確保有效溝通並促進跨部門協作。
+      icon: crop-16-9
+loc:
+  title: 工作室
+  desc: 106409 臺北市大安區金山南路2段55號
+contact:
+  - title: 電子郵件
+    desc: example@example.com
+  - title: LinkedIn
+    desc: linkedin.com/in/example
