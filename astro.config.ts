@@ -12,6 +12,8 @@ import compress from 'astro-compress';
 import type { AstroIntegration } from 'astro';
 
 import astrowind from './vendor/integration';
+import fs from 'fs';
+import 'dotenv/config'
 
 import { readingTimeRemarkPlugin, responsiveTablesRehypePlugin, lazyImagesRehypePlugin } from './src/utils/frontmatter';
 
@@ -86,5 +88,11 @@ export default defineConfig({
         '~': path.resolve(__dirname, './src'),
       },
     },
+    server: {
+      https: {
+        key: fs.readFileSync(path.resolve(__dirname, process.env.DEV_CERT_KEY_PATH ?? "")),
+        cert: fs.readFileSync(path.resolve(__dirname, process.env.DEV_CERT_PATH ?? "")),
+      },
+    }
   },
 });
