@@ -17,6 +17,9 @@ import 'dotenv/config'
 
 import { readingTimeRemarkPlugin, responsiveTablesRehypePlugin, lazyImagesRehypePlugin } from './src/utils/frontmatter';
 
+const IS_DEV = process.env.NODE_ENV === 'development'
+
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const hasExternalScripts = false;
@@ -89,10 +92,10 @@ export default defineConfig({
       },
     },
     server: {
-      https: {
+      https: IS_DEV ? {
         key: fs.readFileSync(path.resolve(__dirname, process.env.DEV_CERT_KEY_PATH ?? "")),
         cert: fs.readFileSync(path.resolve(__dirname, process.env.DEV_CERT_PATH ?? "")),
-      },
+      } : {},
     }
   },
 });
