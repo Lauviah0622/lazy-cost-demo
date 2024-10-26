@@ -8,6 +8,9 @@ import { getEntry } from 'astro:content';
 
 const { data } = await getEntry('about', 'data');
 
+console.log(data);
+
+
 const metadata = {
   title: 'About us',
 };

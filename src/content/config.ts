@@ -83,6 +83,10 @@ const aboutSchema = {
       })
     ),
   }),
+  loc: z.object({
+    title: z.string(),
+    desc: z.string()
+  }),
   contact: z.array(
     z.object({
       title: z.string(),
