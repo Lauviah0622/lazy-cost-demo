@@ -1,5 +1,5 @@
 site:
-  name: AstroWind
+  name: 形象網站
   site: 'https://lazy-cost-demo.netlify.app/'
   base: '/'
   trailingSlash: false
@@ -9,7 +9,7 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: AstroWind
+    default: 形象網站
     template: '%s — AstroWind'
   description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
   robots:
